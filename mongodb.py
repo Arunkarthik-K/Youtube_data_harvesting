@@ -1,6 +1,4 @@
 import pymongo
-import streamlit as st
-
 
 class MongoDB:
 
@@ -19,7 +17,7 @@ class MongoDB:
             "Channel_data": youtubeData
         }
 
-        upload = collection.replace_one({'_id': channelId}, finalOutputData, upsert=True)
+        collection.replace_one({'_id': channelId}, finalOutputData, upsert=True)
         client.close()
 
     def main(self, channelId, channelName, youtubeData):
