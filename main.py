@@ -84,7 +84,7 @@ if migrate is True:
     else:
 
         st.warning("The data has already been stored in MySQL database")
-        option = st.selectbox('Do you want to overwrite the data?', ('Yes', 'No'))
+        option = st.selectbox('Do you want to overwrite the data?', ('Choose an option', 'Yes', 'No'))
 
         if option == 'Yes':
             dataConversionObj = DataConversion()
@@ -110,7 +110,8 @@ st.header('Analysis channel data')
 
 # Select box creation for question
 question = st.selectbox('**Select your Question**',
-                        ('1. What are the names of all the videos and their corresponding channels?',
+                        ('Choose an option',
+                         '1. What are the names of all the videos and their corresponding channels?',
                          '2. Which channels have the most number of videos, and how many videos do they '
                          'have?',
                          '3. What are the top 10 most viewed videos and their respective channels?',

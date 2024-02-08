@@ -22,8 +22,6 @@ class MongoDB:
         upload = collection.replace_one({'_id': channelId}, finalOutputData, upsert=True)
         client.close()
 
-        st.write(f"Updated document id: {upload.upserted_id if upload.upserted_id else upload.modified_count}")
-
     def main(self, channelId, channelName, youtubeData):
 
         # Create a client instance of MongoDB
